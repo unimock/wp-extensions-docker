@@ -15,16 +15,19 @@ RUN apk update && \
     echo "alias ll='ls -alF'"                                                               >> /etc/profile.d/tool && \ 
     echo 'export TERM="xterm"'                                                              >> /etc/profile.d/tool 
 
-RUN echo ' some hints:'                                                                           >> /help && \
-    echo '  * wp ...... wordpress cli'                                                            >> /help && \
-    echo '  * mysql ... database operations:'                                                     >> /help && \
-    echo '              mysql -h ${WORDPRESS_DB_HOST%:3306} -u root -p$WORDPRESS_DB_PASSWORD'     >> /help && \
-    echo '  * nano .... editor'                                                                   >> /help && \
-    echo '  * mc ...... tbd'                                                                      >> /help && \
-    echo '  * wget .... tbd'                                                                      >> /help && \
-    echo '  * curl .... tbd'                                                                      >> /help && \
-    echo '  * exit .... logout'                                                                   >> /help && \
-    echo '  ! only <mysql database> and </var/www/html> are persistent for recreate containers !' >> /help && \
-    echo '  Umgang mit mc'                                                                        >> /help && \
-    echo ''                                                                                       >> /help
+COPY tool /usr/local/bin/
+RUN  chmod a+x /usr/local/bin/tool
+
+#RUN echo ' some hints:'                                                                           >> /help && \
+#    echo '  * wp ...... wordpress cli'                                                            >> /help && \
+#    echo '  * mysql ... database operations:'                                                     >> /help && \
+#    echo '              mysql -h ${WORDPRESS_DB_HOST%:3306} -u root -p$WORDPRESS_DB_PASSWORD'     >> /help && \
+#    echo '  * nano .... editor'                                                                   >> /help && \
+#    echo '  * mc ...... tbd'                                                                      >> /help && \
+#    echo '  * wget .... tbd'                                                                      >> /help && \
+#    echo '  * curl .... tbd'                                                                      >> /help && \
+#    echo '  * exit .... logout'                                                                   >> /help && \
+#    echo '  ! only <mysql database> and </var/www/html> are persistent for recreate containers !' >> /help && \
+#    echo '  Umgang mit mc'                                                                        >> /help && \
+#    echo ''                                                                                       >> /help
 
