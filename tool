@@ -17,7 +17,6 @@ _hints()
   echo "  hints:"
   echo ""
   echo "     * only <mysql database>, </var/www/html> and </exchange> will survive an image re-creation!"
-  echo "     * /exchange is a permanent storage"
   echo ""
   echo "  > tool hints  # display this hints"
   echo "  > exit        # leave console"
