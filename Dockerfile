@@ -12,6 +12,7 @@ RUN apk update && \
     echo "alias wp='/usr/local/bin/wp-cli.phar --allow-root'"                                > /root/.bashrc       && \
     echo ". /etc/profile"                                                                   >> /root/.bashrc       && \
     echo "export PS1='\H:\w\\$ '"                                                           >> /etc/profile        && \
+    echo "export LESS=-r"                                                                   >> /etc/profile        && \
     echo "alias ll='ls -alF'"                                                               >> /etc/profile        && \ 
     echo 'export TERM="xterm"'                                                              >> /etc/profile 
 

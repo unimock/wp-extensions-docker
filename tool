@@ -2,19 +2,21 @@
 
 _hints()
 {
+  echo " g7-wp-extensions (wp-cli, mysql-client, wget, curl, nano)"
   echo ""
-  echo " wp-extensions:"
+  echo "  examples:"
   echo ""
-  echo "  * wp ...... wordpress cli"
-  echo "  * mysql ... database operations:"
-  echo "              mysql -h ${WORDPRESS_DB_HOST%:3306} -u root -p$WORDPRESS_DB_PASSWORD"
-  echo "  * nano .... editor"
-  echo "  * wget,curl .... tbd"
-  echo "  * exit .... logout"
+  echo "     > mysql -h ${WORDPRESS_DB_HOST%:3306} -u root -p$WORDPRESS_DB_PASSWORD"
+  echo "     > mysqldump -h ${WORDPRESS_DB_HOST%:3306} -u root -p$WORDPRESS_DB_PASSWORD > /exchange/db.sql"
+  echo "     > wp user list"
   echo ""
+  echo "  hints:"
   echo ""
-  echo "  ! only <mysql database> and </var/www/html> and /are persistent for recreate containers !"
-  echo "  Umgang mit mc"
+  echo "     * only <mysql database>, </var/www/html> and </exchange> will survive an image re-creation!"
+  echo "     * /exchange is a permanent storage"
+  echo ""
+  echo "  > tool hints  # display this hints"
+  echo "  > exit        # leave console"
   echo "" 
 }
 
