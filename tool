@@ -7,8 +7,12 @@ _hints()
   echo "  examples:"
   echo ""
   echo "     > mysql -h ${WORDPRESS_DB_HOST%:3306} -u root -p$WORDPRESS_DB_PASSWORD"
-  echo "     > mysqldump -h ${WORDPRESS_DB_HOST%:3306} -u root -p$WORDPRESS_DB_PASSWORD > /exchange/db.sql"
+  echo "     > mysqldump -h ${WORDPRESS_DB_HOST%:3306} -u root -p$WORDPRESS_DB_PASSWORD wordpress > /exchange/db.sql"
+  echo "     > wp core install --url=example.com --title=Example --admin_user=supervisor --admin_password=strongpassword --admin_email=info@example.com"
+  echo "     > wp plugin install updraftplus --activate"
+  echo "     > wp plugin install smtp-mailer --activate"
   echo "     > wp user list"
+  
   echo ""
   echo "  hints:"
   echo ""
