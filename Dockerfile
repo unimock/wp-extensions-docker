@@ -17,12 +17,7 @@ RUN apk update && \
     echo 'export TERM="xterm"'                                                              >> /etc/profile 
 
 #upload
-RUN echo -n "file_uploads = On\n" \
-            "memory_limit = 500M\n" \
-            "upload_max_filesize = 500M\n" \
-            "post_max_size = 500M\n" \
-            "max_execution_time = 600\n" \
-            > /usr/local/etc/php/conf.d/uploads.ini
+RUN echo -e "file_uploads = On\nmemory_limit = 500M\nupload_max_filesize = 500M\npost_max_size = 500M\nmax_execution_time = 600" > /usr/local/etc/php/conf.d/uploads.ini
 
 RUN chmod a+x /usr/local/bin/*
 
